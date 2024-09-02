@@ -1,0 +1,146 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_number",
+						"type": "uint256"
+					}
+				],
+				"name": "addPerson",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "listOfPeople",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favouriteNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "myfavouriteNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "nameToFavouriteNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "retrieve",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_favouriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "store",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"SimpleStorage.sol": "SimpleStorage"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"SimpleStorage.sol": {
+			"keccak256": "0x31d820068c2b2629ea99d7e4533d4c4c5ee0eacf2d7134624029f1196989c255",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e16996737c6c978d73365a24f177397d89e22638ae155d1d96c9cdf88bd29c5d",
+				"dweb:/ipfs/QmSPszsoCozbq8wbhbaLKfMqPcHW1KQ1CFjPo4f3dDNSkL"
+			]
+		}
+	},
+	"version": 1
+}
