@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "corepack": "^0.29.4",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
+    "fs-extra": "^11.2.0",
+    "solc": "0.8.19"
+  },
+  "scripts": {
+    "compile": "npx solc --bin --abi --include-path node_modules/ --base-path . -o . SimpleStorage.sol"
+  }
+}
