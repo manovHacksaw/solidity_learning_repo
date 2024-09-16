@@ -1,0 +1,139 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\manov\\Desktop\\code\\Solidity\\07_HardhatFundMe\\contracts\\FundMe.sol": {
+      "lastModificationDate": 1725967178662,
+      "contentHash": "1f8821a9d783807d5cbc2721aa0f16ac",
+      "sourceName": "contracts/FundMe.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
+        "./PriceConverter.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "FundMe"
+      ]
+    },
+    "C:\\Users\\manov\\Desktop\\code\\Solidity\\07_HardhatFundMe\\contracts\\PriceConverter.sol": {
+      "lastModificationDate": 1725967235037,
+      "contentHash": "10ed824c17508d52e337a90dbd5df050",
+      "sourceName": "contracts/PriceConverter.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "PriceConverter"
+      ]
+    },
+    "C:\\Users\\manov\\Desktop\\code\\Solidity\\07_HardhatFundMe\\node_modules\\@chainlink\\contracts\\src\\v0.8\\shared\\interfaces\\AggregatorV3Interface.sol": {
+      "lastModificationDate": 1725967281884,
+      "contentHash": "64a3f906dc7696aa3c9fa8454b673be7",
+      "sourceName": "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AggregatorV3Interface"
+      ]
+    }
+  }
+}
