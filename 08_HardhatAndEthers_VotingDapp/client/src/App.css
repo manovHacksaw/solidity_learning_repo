@@ -1,0 +1,129 @@
+/* General styles for the app */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Container for the app */
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Title styles */
+.app-title {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+/* Styles for the connected container */
+.connected-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* Header styles for connected state */
+.connected-header {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* Styles for account display */
+.connected-account {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Styles for candidates list */
+.candidates-container {
+  margin: 20px 0;
+}
+
+/* Candidate list styles */
+.candidates-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.candidates-container li {
+  padding: 10px;
+  background-color: #e8f0fe;
+  margin: 5px 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Button styles for voting */
+.candidates-container button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.candidates-container button:hover {
+  background-color: #45a049;
+}
+
+/* Voting status styles */
+.voting-status,
+.remaining-time {
+  margin: 20px 0;
+}
+
+/* Finished component styles */
+.login-container,
+.finished-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* Welcome message styles */
+.welcome-message {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Login button styles */
+.login-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* End voting early button styles */
+.end-voting-button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.end-voting-button:hover {
+  background-color: #e64a19;
+}
