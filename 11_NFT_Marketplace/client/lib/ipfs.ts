@@ -83,3 +83,45 @@ export function ipfsToHttp(ipfsUrl: string): string {
   const hash = ipfsUrl.replace('ipfs://', '');
   return `https://gateway.pinata.cloud/ipfs/${hash}`;
 }
+
+export const  formatIPFSUrl = (ipfsUrl: string | null): string => {
+    if (!ipfsUrl) return '';
+    
+    // Remove the ipfs:// prefix if it exists
+    const ipfsHash = ipfsUrl.replace('ipfs://', '');
+    
+    // Use a public IPFS gateway
+    // You can change this to other gateways like:
+    // - https://ipfs.io/ipfs/
+    // - https://gateway.pinata.cloud/ipfs/
+    // - https://cloudflare-ipfs.com/ipfs/
+    return `https://ipfs.io/ipfs/${ipfsHash}`;
+  };
+
+
+export  const fetchIPFSMetadata = async (tokenURI: string | null) => {
+    if (!tokenURI) return null;
+    
+    try {
+      const url = formatIPFSUrl(tokenURI);
+      console.log('Fetching metadata from:', url);
+      
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const metadata = await response.json();
+      console.log('Fetched metadata:', metadata);
+      
+      return {
+        name: metadata.name || '',
+        description: metadata.description || '',
+        image: formatIPFSUrl(metadata.image || ''),
+        attributes: metadata.attributes || []
+      };
+    } catch (error) {
+      console.error('Error fetching metadata:', error);
+      return null;
+    }
+  };

@@ -276,59 +276,49 @@ export const MarketplaceProvider: React.FC<MarketplaceProviderProps> = ({ childr
     if (!account) {
       throw new Error('Please connect your wallet first.');
     }
-
+  
     setIsLoading(true);
     try {
       await checkAndSwitchNetwork();
-
-      
-      
-
-      let newProvider = new ethers.BrowserProvider(window.ethereum);
-      let signer = await newProvider.getSigner();
-
-      // console.log(await signer.getAddress())
-      console.log("NFT CONTRACT ADDRESS: ", NFT_CONTRACT_ADDRESS)
+  
+      const newProvider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await newProvider.getSigner();
+  
+      console.log("NFT CONTRACT ADDRESS: ", NFT_CONTRACT_ADDRESS);
       const nftContract = new ethers.Contract(NFT_CONTRACT_ADDRESS, NFTabi, signer);
-
-      // console.log(await nftContract.tokenURI(1));
-
       const marketplaceContract = new ethers.Contract(
         MARKETPLACE_CONTRACT_ADDRESS,
         marketplaceAbi,
         signer
       );
-
+  
       const listings = await marketplaceContract.getAllListings();
-      console.log('Raw listings:', listings);
-
-     
-      const formattedListings: NFTListing[] = await Promise.all(listings.map(async (listing: any) => {
-        let tokenURI = null;
-        try {
-          let newProvider = new ethers.BrowserProvider(window.ethereum);
-          let signer = await newProvider.getSigner();
-    
-          const nftContract = new ethers.Contract(NFT_CONTRACT_ADDRESS, NFTabi, signer);
-          console.log(listing.tokenId)
-          // tokenURI = await nftContract.tokenURI(1);
-          // console.log(nftContract.ownerOf(1))
-          console.log(`TokenURI for ${listing.tokenId}:`, tokenURI);
-        } catch (error) {
-          console.error(`Error fetching tokenURI for tokenId ${listing.tokenId}:`, error);
-        }
-
-        return {
-          tokenId: listing.tokenId.toString(),
-          price: ethers.formatEther(listing.price),
-          seller: listing.seller,
-          nftAddress: listing.nftAddress,
-          tokenURI: tokenURI
-        };
-      }));
-
+      console.log('Raw listings:', listings.length);
+  
+      const formattedListings: NFTListing[] = await Promise.all(
+        listings.map(async (listing: any, index: number) => {
+          let tokenURI = null;
+          try {
+            // Use index as the token ID since we know it starts from 0
+            tokenURI = await nftContract.tokenURI(index);
+            const owner = await nftContract.ownerOf(index);
+            console.log(`TokenURI for index ${index}:`, tokenURI);
+            console.log(`Owner of token ${index}:`, owner);
+          } catch (error) {
+            console.error(`Error fetching data for token index ${index}:`, error);
+          }
+  
+          return {
+            tokenId: index.toString(),
+            price: ethers.formatEther(listing.price),
+            seller: listing.seller,
+            nftAddress: listing.nftAddress,
+            tokenURI: tokenURI
+          };
+        })
+      );
+  
       console.log('All Listings:', formattedListings);
-
       return formattedListings;
     } catch (error) {
       console.error('Error fetching all listings:', error);
@@ -337,6 +327,8 @@ export const MarketplaceProvider: React.FC<MarketplaceProviderProps> = ({ childr
       setIsLoading(false);
     }
   };
+  
+  
   const getListingsByOwner = async (owner: string): Promise<NFTListing[]> => {
     if (!account) {
       throw new Error('Please connect your wallet first.');
